@@ -6,9 +6,11 @@ function scrollFunction() {
 if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("nav").style.top = "0px";
     document.getElementById("bup").style.opacity = ".99";
+    document.getElementById("up").style.cursor = "pointer";
 } else {
     document.getElementById("bup").style.opacity = ".0";
     document.getElementById("nav").style.top = "-80px";
+    document.getElementById("up").style.cursor = "default";
 }
 }
 
@@ -24,4 +26,12 @@ function topFunction() {
         left: 0,
         behavior: 'smooth'
       });
+}
+
+var vid = document.getElementById("video1");
+vid.onmouseover = function(){
+vid.play();
+}
+vid.onmouseup = function(){
+vid.stop();
 }

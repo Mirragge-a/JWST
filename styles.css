@@ -19,6 +19,22 @@ body {
 
 @media all and (max-width: 1920px)
 {
+    .about {
+        display: flex;
+        flex-direction: column;
+    }
+    .section_fill {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .section_p {
+        display: flex;
+        flex-direction: column;
+        text-align: justify;
+        padding-right: 25px;
+        gap: 20px
+    }
     img.background {
         min-height: 100%;
         min-width: 640px; 
@@ -71,6 +87,8 @@ body {
 
     section h1 {
         text-align: center;
+        margin-bottom: 25px;
+        font-size: 50px;
     }
 
     .logo {
@@ -130,12 +148,12 @@ body {
     .up {
         width: 70px;
         height: 70px;
-        background-color: hsl(242, 34%, 17%);
+        background-color: hsl(241, 33%, 26%);
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
         border-bottom-right-radius: 25px;
         border-bottom-left-radius: 25px;
-        cursor: pointer;
+        transition: all 0.3s;
     }
 
     .up:hover {
@@ -200,8 +218,12 @@ body {
         display: none;
     }
     .logo {
-        width: 200px;
-        height: 150px;
+        /* width: 200px;
+        height: 150px; */
+        width: 40%;
+        padding-top: 1%;
+        padding-right: 1%;
+        padding-left: 10px;
     }
     .info {
         display: none;
