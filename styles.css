@@ -1,0 +1,215 @@
+* {
+    padding: 0;
+    margin: 0 ;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    
+}
+
+@media all and (max-width: 1920px)
+{
+    img.background {
+        min-height: 100%;
+        min-width: 640px; 
+        width: 100%; 
+        height: auto; 
+        position:fixed; 
+        top: 0; 
+        left: 0; 
+        z-index: -100;
+    }
+    .icon {
+        display: none;
+    }
+    .info {
+        /* position: absolute; */
+        color: white;
+        /* left: 15%;
+        right: 15%; */
+        /* top: 10%; */
+        height: auto;
+        /*  width: 80%; */
+        font-size: 25px;
+    }
+
+    .topnav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .topnav p {
+        color: lavender;
+        padding-top: 50px;
+        padding-right:  30px;
+        font-size: 300%;
+        text-shadow:
+        1px 1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        -1px -1px 0 black;
+
+    }
+
+    section {
+        background: rgba(58, 34, 66, 0.5);
+        margin-top:70px;
+        padding: 30px;
+
+    }
+
+    section h1 {
+        text-align: center;
+    }
+
+    .logo {
+        width: 15%;
+        padding-top: 1%;
+        padding-right: 1%;
+        padding-left: 10px;
+    }
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        z-index: 100;
+        background-color: hsl(242, 34%, 17%);
+        /* background-color: rgba(134, 37, 239, 0.9); */
+        position: fixed;
+        width: 80%;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        top: -80px;
+        transition: top 0.3s;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        
+    }
+    
+    nav>ul a {
+        text-decoration: none;
+        font-family: sans-serif;
+        color: #212042;
+        display: inline-block;
+        font-size: 110%;
+        padding: 20px 45px;
+        background-color:hsl(242, 34%, 17%);
+        color: lavender;
+        transition: all 0.3s;
+    }
+
+    nav>ul a:hover {
+        background-color: #c5afff;
+    }
+    .but_up {
+        position: fixed;
+        margin-top: 87vh;
+        margin-left: 90vw;
+        opacity: .0;
+        transition: all 0.6s;
+        background: rgba(0,0,0,0);
+        border: none;
+    }
+
+    .up {
+        width: 70px;
+        height: 70px;
+        background-color: hsl(242, 34%, 17%);
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        border-bottom-left-radius: 25px;
+        cursor: pointer;
+    }
+
+    .up:hover {
+        background-color: hsl(240, 28%, 12%);
+    }
+
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    
+    .dropdown-content li {
+        float: none;
+        color: black;
+        padding: 24px 32px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    
+    .dropdown-content li:hover {
+        background-color: #ddd;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+
+
+
+@media all and (max-width: 720px)
+{
+    img.background {
+        min-height: 100%;
+        min-width: 640px; 
+        width: 100vh; 
+        height: 100vw; 
+        position:fixed; 
+        top: 0; 
+        left: 0; 
+        z-index: -100;
+    }
+    .topnav {
+        margin-top: 10px;
+        margin-left: -30px;
+    }
+    .icon {
+        display: flex;
+        color: white;
+        position: fixed;
+        margin-left: 80vw;
+        font-size: 50px;
+    }
+    nav {
+        display: none;
+    }
+    .logo {
+        width: 200px;
+        height: 150px;
+    }
+    .info {
+        display: none;
+    }
+    .topnav p {
+        display: none;
+    }
+}
+
+
+
