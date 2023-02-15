@@ -1,5 +1,5 @@
 
-//
+// navigation bar + button up
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -14,12 +14,7 @@ if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
 }
 }
 
-//
-// function topFunction() {
-//     document.body.scrollTop = 0; // For Safari
-//     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-// }
-
+// button scroll up
 function topFunction() {
     window.scrollTo({
         top: 0,
@@ -27,9 +22,11 @@ function topFunction() {
         behavior: 'smooth'
       });
 }
+//video pause/play
 video = document.getElementById("video1")
 stop_vid = document.getElementById("p1")
 play_vid = document.getElementById("p2")
+
 function vidFunction() {
     if (video.paused) {
         video.play();
