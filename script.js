@@ -27,11 +27,19 @@ function topFunction() {
         behavior: 'smooth'
       });
 }
+video = document.getElementById("video1")
+stop_vid = document.getElementById("p1")
+play_vid = document.getElementById("p2")
+function vidFunction() {
+    if (video.paused) {
+        video.play();
+        play_vid.style.display = "none";
+        stop_vid.style.display = "block";
 
-var vid = document.getElementById("video1");
-vid.onmouseover = function(){
-vid.play();
-}
-vid.onmouseup = function(){
-vid.stop();
+    }
+    else {
+        video.pause();
+        stop_vid.style.display = "none";
+        play_vid.style.display = "block";
+    }
 }

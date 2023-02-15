@@ -19,6 +19,14 @@ body {
 
 @media all and (max-width: 1920px)
 {
+    #bvid {
+        border: none;
+        background-color: #212042;
+        color: white;
+    }
+    #p2 {
+        display: none;
+    }
     .about {
         display: flex;
         flex-direction: column;
