@@ -40,3 +40,6 @@ function vidFunction() {
         play_vid.style.display = "block";
     }
 }
+
+
+
