@@ -42,4 +42,23 @@ function vidFunction() {
 }
 
 
+//gallery js
+var modal = document.getElementById('myModal');               
+var modalImg = document.getElementById("modalct");
+var captionText = document.getElementById("caption");
+
+document.addEventListener("click", function(e) {
+    if (e.target.className=="myImg") {
+        modal.style.display = "block";
+        modalImg.src = e.target.src;
+        captionText.innerHTML = e.target.alt;
+    }
+});
+
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+
 
