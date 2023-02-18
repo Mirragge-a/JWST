@@ -24,20 +24,14 @@ function topFunction() {
 }
 //video pause/play
 video = document.getElementById("video1")
-stop_vid = document.getElementById("p1")
-play_vid = document.getElementById("p2")
 
 function vidFunction() {
     if (video.paused) {
         video.play();
-        play_vid.style.display = "none";
-        stop_vid.style.display = "block";
 
     }
     else {
         video.pause();
-        stop_vid.style.display = "none";
-        play_vid.style.display = "block";
     }
 }
 
@@ -55,7 +49,7 @@ document.addEventListener("click", function(e) {
     }
 });
 
-var span = document.getElementsByClassName("close")[0];
+var span = document.getElementsByClassName("modal")[0];
 
 span.onclick = function() { 
     modal.style.display = "none";
