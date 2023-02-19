@@ -217,7 +217,7 @@ body {
         z-index: 1;
     }
     
-    .dropdown-content li {
+    .dropdown-content a {
         float: none;
         color: black;
         padding: 24px 32px;
