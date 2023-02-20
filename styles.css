@@ -19,6 +19,13 @@ body {
 
 @media all and (max-width: 1920px)
 {
+    .bottombar {
+        background-color:#212042;
+        width: all;
+        height: 100px;
+        color: white;
+        font-size: 20px;
+    }
     #bvid {
         border: none;
         background-color: rgba(58, 34, 66, 0);
