@@ -53,8 +53,9 @@ document.addEventListener("click", function(e) {
         // div.setAttribute("class", "element");
         // div.textContent = "Element";
         var ImgArray = document.getElementsByClassName("myImg");
-        console.log(ImgArray)
-        ImgArray.array.forEach(element => {
+        //console.log(ImgArray)
+        ImgArray.forEach(element => {
+            console.log(element)
             element.style.width = "150px";
         });
         captionText.insertAdjacentElement("beforeend", gallery_div);
