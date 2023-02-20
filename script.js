@@ -42,6 +42,7 @@ var modalImg = document.getElementById("modalct");
 var captionText = document.getElementById("caption");
 var gallery_div = document.getElementById('div_g');
 var gallery_h1 = document.getElementById('gallery_h1');
+var ImgArray = document.getElementsByClassName("myImg");
 
 document.addEventListener("click", function(e) {
     if (e.target.className=="myImg") {
@@ -49,17 +50,17 @@ document.addEventListener("click", function(e) {
         modalImg.src = e.target.src;
         captionText.innerHTML = e.target.alt;
         // captionText.appendChild(gallery_div);
-        // var div = document.createElement("div");
-        // div.setAttribute("class", "element");
-        // div.textContent = "Element";
-        var ImgArray = document.getElementsByClassName("myImg");
+        var div = document.createElement("div");
+        div.setAttribute("class", "element");
+        div.textContent = "Element";
         //console.log(ImgArray)
-        ImgArray.forEach(element => {
-            console.log(element)
+        captionText.insertAdjacentElement("beforeend", gallery_div);
+        // Array1 = ImgArray.filter(item => item.id == e.targer.id);
+        Array.from(ImgArray).forEach(element => {
             element.style.width = "150px";
         });
-        captionText.insertAdjacentElement("beforeend", gallery_div);
-
+        document.body.style.overflow = "hidden";
+        gallery_div.style.margin = "50px";
     }
 });
 
@@ -68,6 +69,11 @@ var span = document.getElementsByClassName("modal")[0];
 span.onclick = function() { 
     modal.style.display = "none";
     gallery_h1.insertAdjacentElement("beforeend", gallery_div)
+    Array.from(ImgArray).forEach(element => {
+        element.style.width = "350px";
+    });
+    document.body.style.overflow = "visible";
+    gallery_div.style.margin = "0px";
 
 }
 

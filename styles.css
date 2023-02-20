@@ -38,7 +38,11 @@ body {
     .section_fill h3 {
         text-align: center;
         font-size: 15px;
+    }
 
+    #early_space p {
+        padding-right: 0px;
+        padding-left: 25px;
     }
 
     .p_a {
@@ -54,8 +58,8 @@ body {
         display: flex;
         flex-direction: column;
         text-align: justify;
-        padding-right: 25px;
         gap: 20px;
+        padding-right: 25px;
         text-indent: 20px
     }
     img.background {
@@ -103,7 +107,8 @@ body {
 
     section {
         background: rgba(58, 34, 66, 0.5);
-        margin-top:100px;
+        margin-top: 50px;
+        margin-bottom: 50px;
         padding: 30px;
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
