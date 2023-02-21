@@ -25,15 +25,29 @@ body {
         width: all;
         height: 100px;
     }
-
-    .time>div {
-        display: ;
-    }
-    .time>p {
+    .time {
+        width: 192px;
+        margin: auto;
         height: 100%;
     }
-    .time>p:hover .time_hide{
+
+    .time>div {
+        display: none;
+        width: auto;
+    }
+
+    .time>p {
+        height: 100%;
+        padding: 20px;
+    }
+    .time>p:hover+.time_hide1{
         display: block;
+        margin-top: -21%;
+        background-color: #3d80e8;
+    }
+    .time>p:hover+.time_hide2{
+        display: block;
+        margin-top:-117%;
         background-color: #3d80e8;
     }
     
