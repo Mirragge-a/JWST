@@ -19,13 +19,50 @@ body {
 
 @media all and (max-width: 1920px)
 {
-    .bottombar {
-        background-color:#212042;
+    .timeline {
+        display: flex;
+        flex-direction: row;
         width: all;
         height: 100px;
+    }
+
+    .time>div {
+        display: ;
+    }
+    .time>p {
+        height: 100%;
+    }
+    .time>p:hover .time_hide{
+        display: block;
+        background-color: #3d80e8;
+    }
+    
+    #time1 {background-color: aqua;}
+    #time2 {background-color: #6f6e91;}
+    .bottombar {
+        display: flex;
+        justify-content: space-between;
+        background-color:#212042;
+        width: all;
+        height: auto;
         color: white;
         font-size: 20px;
     }
+    #bottom_logo {
+        padding-top: 10px;
+        padding-left: 10 px;
+        padding-right: 10px;
+        padding-bottom: 5px;
+        filter: brightness(4)
+    }
+    
+    .bottom_contact {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
     #bvid {
         border: none;
         background-color: rgba(58, 34, 66, 0);
@@ -266,6 +303,8 @@ body {
         flex-wrap: wrap;
         justify-content: center;
     }
+
+
     
     
     .myImg:hover {opacity: 0.7;}
