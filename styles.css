@@ -20,35 +20,54 @@ body {
 @media all and (max-width: 1920px)
 {
     .timeline {
+        /* border: 1px solid #000; */
+        /* position: relative; */
         display: flex;
         flex-direction: row;
+        height: 150px;
         width: all;
-        height: 100px;
-    }
-    .time {
-        width: 192px;
-        margin: auto;
-        height: 100%;
-    }
+        align-items: center;
 
-    .time>div {
-        display: none;
-        width: auto;
-    }
-
-    .time>p {
-        height: 100%;
-        padding: 20px;
-    }
-    .time>p:hover+.time_hide1{
+        
+        
+      }
+      
+      .time{
+        position: relative;
+        border: 1px solid #000;
+        background-color: #942e2e;
+        width: 350px;
+        height: 60px;
+        
+      }
+      
+      .time:hover .hint{
         display: block;
-        margin-top: -21%;
-        background-color: #3d80e8;
-    }
-    .time>p:hover+.time_hide2{
-        display: block;
-        margin-top:-117%;
-        background-color: #3d80e8;
+        opacity: 1;
+        
+      }
+      
+      .hint {
+        position: absolute;  
+        /* display: none; */
+        background-color: #7973a4;
+        color:beige;
+        font-size: large;
+        width: 350px;
+        height: 130px;
+        opacity: 0;
+        transition: 1s all;
+      }
+      
+      .hint_odd{
+      
+        top: -70px;
+      }
+      
+      .hint_even{
+        
+        top: 0px;
+      }
     }
     
     #time1 {background-color: aqua;}
