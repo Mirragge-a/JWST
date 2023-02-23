@@ -17,8 +17,8 @@ body {
     
 }
 
-@media all and (max-width: 1920px)
-{
+@media all and (max-width: 1920px) {
+
     .timeline {
         /* border: 1px solid #000; */
         /* position: relative; */
@@ -27,56 +27,46 @@ body {
         height: 150px;
         width: all;
         align-items: center;
-        justify-content: center;
-        
-        
-      }
+        justify-content: center;  
+    }
       
-      .time{
+    .time{
         position: relative;
         border: 1px solid #000;
         background-color: #942e2e;
-        width: 180px;
+        width: 165px;
         height: 60px;
         display: flex;
         align-items: center;
         justify-content: center;
-      }
-      
-      .time:hover .hint{
+    }
+    
+    .time:hover .hint{
         opacity: 1;
-        
-      }
-      
-      .hint {
+    }
+    
+    .hint {
         position: absolute;
         display: flex;
         background-color: #7973a4;
         color:beige;
         font-size: large;
-        width: 180px;
-        height: 160px;
+        width: 165px;
+        height: 165px;
         opacity: 0;
         transition: 0.7s all;
         text-align: center;
         align-items: center;
-        
-      }
-
-      .hint p {
-        padding: 10px;
-      }
-      
-      .hint_odd{
-      
-        top: -100px;
-      }
-      
-      .hint_even{
-        
-        top: 0px;
-      }
     }
+    
+    .hint_odd{
+        top: -105px;
+    }
+    
+    .hint_even{ 
+        top: 0px;
+    }
+    
     
     #time1 {background-color: #7f5eb2;}
     #time2 {background-color: #3d80e8;}
@@ -84,6 +74,7 @@ body {
     #time4 {background-color: #2f1066;}
     #time5 {background-color: #b481be;}
     #time6 {background-color: #5659c2;}
+    #time7 {background-color: #4faff1;}
     .bottombar {
         display: flex;
         justify-content: space-between;
@@ -417,8 +408,7 @@ body {
         transition: 0.3s;
     }
     
-    .close:hover,
-    .close:focus {
+    .close:hover, .close:focus {
         color: #bbb;
         text-decoration: none;
         cursor: pointer;
@@ -469,7 +459,3 @@ body {
         display: none;
     }
 }
-
-
-
-
