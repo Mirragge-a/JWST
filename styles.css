@@ -18,7 +18,9 @@ body {
 }
 
 @media all and (max-width: 1920px) {
-
+    .mobile_p {
+        display: none;
+    }
     .timeline {
         /* border: 1px solid #000; */
         /* position: relative; */
@@ -420,6 +422,15 @@ body {
 
 @media all and (max-width: 720px)
 {
+    .mobile_p {
+        display: flex;
+        color: whitesmoke;
+        font-size: 35px;
+        width: all;
+        height: all;
+        text-align: center;
+        padding-top: 160px;
+    }
     img.background {
         min-height: 100%;
         min-width: 640px; 
@@ -456,6 +467,9 @@ body {
         display: none;
     }
     .topnav p {
+        display: none;
+    }
+    .bottombar {
         display: none;
     }
 }
