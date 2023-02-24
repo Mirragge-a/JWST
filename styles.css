@@ -432,28 +432,76 @@ body {
         left: 0; 
         z-index: -100;
     }
+    .info img {
+        padding-top: 15px;
+        width: 300px;
+    }
+    /* #bup {
+        display: none;
+    } */
+    #timeline {
+        display: none;
+    }
+    body video {
+        padding-top: 15px;
+        width: 300px;
+    }
     .topnav {
         margin-top: 10px;
         margin-left: -30px;
     }
+    .info {
+        width: 100%;
+    }
+    section {
+        margin: 0px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        padding: 15px;
+
+    }
+    #early_h3 {
+        margin-bottom: 15px;
+    }
+
+    .section_p {
+        padding-right: 0px;
+        text-indent: 10px;
+        text-align: left;
+        text-align: center;
+    }
+    section h1 {
+        font-size: 30px;
+    }
+    .section_fill {
+        flex-direction: column;
+    }
+    .section_fill>div{
+        text-align: center;
+    }
+    .wrapper {
+        width: 100vw;
+    }
+
     .icon {
         display: flex;
         color: white;
         position: fixed;
-        margin-left: 80vw;
+        margin-left: 90vw;
         font-size: 50px;
         text-decoration: none;
     }
     nav {
         display: flex;
         flex-direction: column;
-        left: 0%;
+        left: 100%;
         z-index: 0;
         background-color: hsl(242, 34%, 17%);
         /* background-color: rgba(134, 37, 239, 0.9); */
-        width: 60%;
+        width: 50%;
         top: 90px;
-        margin-left: 40%;
+        margin-left: 50%;
         transition: all 1s;
     }
     nav ul {
@@ -471,7 +519,6 @@ body {
         padding-top: 15px;
         padding-bottom: 10px;
     }
-
     .nav_a {
         text-decoration: none;
         font-family: sans-serif;
@@ -489,13 +536,13 @@ body {
         /* width: 200px;
         height: 150px; */
         width: 40%;
-        padding-top: 1%;
-        padding-right: 1%;
-        padding-left: 10px;
+        margin-left: 10px;
+        padding: 10px;
     }
-    .info {
+    /* .info {
         display: none;
-    }
+    } */
+
     .topnav p {
         display: none;
     }
