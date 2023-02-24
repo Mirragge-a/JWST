@@ -440,7 +440,14 @@ body {
         display: none;
     } */
     #timeline {
-        display: none;
+
+    }
+    .time {
+        text-align: center;
+    }
+
+    .hint {
+        z-index: 10;
     }
     body video {
         padding-top: 15px;
@@ -544,9 +551,6 @@ body {
     } */
 
     .topnav p {
-        display: none;
-    }
-    .bottombar {
         display: none;
     }
 }
