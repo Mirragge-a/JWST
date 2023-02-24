@@ -450,7 +450,7 @@ body {
         z-index: 10;
     }
     body video {
-        padding-top: 15px;
+        margin-top: 15px;
         width: 300px;
     }
     .topnav {
