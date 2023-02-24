@@ -77,4 +77,10 @@ span.onclick = function() {
 
 }
 
-
+function mobile_click() {
+if (document.getElementById("nav").style.left != "100%") {
+        document.getElementById("nav").style.left = "100%";
+} else {
+        document.getElementById("nav").style.left = "0%";
+    }
+}
