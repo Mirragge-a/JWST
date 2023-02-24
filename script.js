@@ -1,6 +1,13 @@
 const mediaDesctop = window.matchMedia('(min-width: 768px)')
 const mediaMobile = window.matchMedia('(max-width: 720px)')
 
+window.onload = function () {
+    document.body.classList.add('loaded_hiding');
+    window.setTimeout(function () {
+      document.body.classList.add('loaded');
+      document.body.classList.remove('loaded_hiding');
+    }, 500);
+}
 
 if (mediaDesctop.matches) {
   
