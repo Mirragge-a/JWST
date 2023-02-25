@@ -82,7 +82,7 @@ body {
     display: none;
   }
 
-@media all and (max-width: 1920px) {
+@media all and (max-width: 5000px) {
     .mobile_p {
         display: none;
     }
@@ -489,12 +489,13 @@ body {
 {
     img.background {
         min-height: 100%;
-        min-width: 640px; 
-        width: 100vh; 
+        min-width: 640px;
+        width: 100vh;
         height: 100vw; 
-        position:fixed; 
+        position: fixed;
         top: 0; 
-        left: 0; 
+        left: 0;
+        right: 0;
         z-index: -100;
     }
     .info img {
@@ -524,6 +525,7 @@ body {
     }
     .info {
         width: 100%;
+        margin-right: 0;
     }
     section {
         margin: 0px;
@@ -531,6 +533,7 @@ body {
         margin-bottom: 10px;
         font-size: 20px;
         padding: 15px;
+        overflow: hidden;
 
     }
     #early_h3 {
@@ -553,7 +556,7 @@ body {
         text-align: center;
     }
     .wrapper {
-        width: 100vw;
+        width: 100vw
     }
 
     .icon {
@@ -611,9 +614,7 @@ body {
         margin-left: 10px;
         padding: 10px;
     }
-    /* .info {
-        display: none;
-    } */
+    
 
     .topnav p {
         display: none;
