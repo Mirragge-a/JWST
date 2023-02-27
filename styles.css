@@ -81,9 +81,7 @@ body {
   .loaded .preloader {
     display: none;
   }
-    #bottom_img {
-        width: 170px;
-    }
+  
 @media all and (max-width: 5000px) {
     .mobile_p {
         display: none;
