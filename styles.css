@@ -507,16 +507,48 @@ body {
         display: none;
     } 
 
-    #timeline {
-
+    .timeline {
+        flex-direction: column;
+        height: 150px;
+        width: all;
+        align-items: center;
+        justify-content: center;  
+        margin-top: 110px;
+        margin-bottom: 100px;
+        position: relative;
     }
+
     .time {
         text-align: center;
+        width: 100px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 25px;
     }
 
-    .hint {
-        z-index: 10;
+    .hint_odd{
+        /* top: -201px; */
+        right: 100px;
     }
+    
+    .hint_even{ 
+        /* top: -201px; */
+        left: 100px;
+    }
+    .hint {
+        position: absolute;
+        display: flex;
+        background-color: #7973a4;
+        color:beige;
+        font-size: large;
+        width: 130px;
+        height: 250px;
+        opacity: 0;
+        transition: 0.7s all;
+        text-align: center;
+        align-items: center;
+    }
+
     body video {
         margin-top: 15px;
         width: 300px;
