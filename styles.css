@@ -528,12 +528,12 @@ body {
 
     .hint_odd{
         /* top: -201px; */
-        right: 100px;
+        right: -100px;
     }
     
     .hint_even{ 
         /* top: -201px; */
-        left: 100px;
+        left: 0px;
     }
     .hint {
         position: absolute;
@@ -541,13 +541,16 @@ body {
         background-color: #7973a4;
         color:beige;
         font-size: large;
-        width: 130px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
         opacity: 0;
         transition: 0.7s all;
         text-align: center;
         align-items: center;
+        z-index: 100;
+
     }
+
 
     body video {
         margin-top: 15px;
