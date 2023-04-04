@@ -89,7 +89,19 @@ nav {
     opacity: 1;
 }
 #jwst {
-    width: 150px;
-    margin-top: 80ch;
-    margin-left: 650px;
+    width: 10%;
+    height: auto;
+    margin-top: 65vh;
+    margin-left: 45%;
+    transition: all 0.5s;
+}
+
+.enemy_spawn {
+    margin-top: 5%;
+    display: flex;
+    gap: 10%;
+}
+
+.enemy {
+    width: 5%;
 }
