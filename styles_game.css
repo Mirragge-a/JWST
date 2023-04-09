@@ -8,7 +8,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-  
+    overflow: hidden;
 }
 
 .wrapper {
@@ -110,8 +110,9 @@ nav {
     height: auto;
     margin-top: 50vh;
     margin-left: 45%;
-    transition: all 0.5s;
+    transition: margin-left 0.3s;
 }
+
 
 .enemy_spawn {
     margin-top: 5%;
@@ -122,25 +123,35 @@ nav {
 
 .enemy {
     width: 5%;
+    opacity: 0;
+    /* animation: enemy_anim 5s infinite; */
 }
+@keyframes enemy_anim {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(110vh);
+    }
+  }
 }
 
 
-@media all and (max-width: 720px)
-{
-.mobile_p {
-    display: block;
-    font-size: 30px;
-    text-align: center;
-    margin-top: 70%;
-}
-.desktop_a {
-    display: none;
-}
-#but_start {
-    display: none;
-}
-.game {
-    display: none;
-}
+@media all and (max-width: 720px) {
+    .mobile_p {
+        display: block;
+        font-size: 30px;
+        text-align: center;
+        margin-top: 70%;
+    }
+    .desktop_a {
+        display: none;
+    }
+    #but_start {
+        display: none;
+    }
+    .game {
+        display: none;
+
+    }
 }
