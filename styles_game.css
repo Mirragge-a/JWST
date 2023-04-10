@@ -108,23 +108,31 @@ nav {
 #jwst {
     width: 10%;
     height: auto;
-    margin-top: 50vh;
+    margin-top: 40%;
     margin-left: 45%;
     transition: margin-left 0.3s;
 }
 
 
 .enemy_spawn {
+    position: relative;
     margin-top: 5%;
     display: flex;
-    gap: 8%;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
 .enemy {
+    position: absolute;
     width: 5%;
     opacity: 0;
-    /* animation: enemy_anim 5s infinite; */
+    transition: margin-top 5s;
+}
+#en1 {
+    margin-left: 0%
+}
+#en2 {
+    margin-left: 5%
 }
 @keyframes enemy_anim {
     0% {
