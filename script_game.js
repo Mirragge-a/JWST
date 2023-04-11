@@ -39,7 +39,7 @@ function startFunction() {
   var enemyCollection = document.getElementsByClassName("enemy")
   var enemyArray = Array.from(enemyCollection)
   var rand1 = Math.floor(Math.random() * enemyArray.length);
-  var up = 0
+  var up_low = 0
 
   // player control
   var left=45
@@ -56,6 +56,7 @@ function startFunction() {
     } else if (event.code == 'KeyD') {
         left += 5
         if(left < 86) {
+          console.log(left)
           document.getElementById("jwst").style.marginLeft = left + "%";
         } else {
           left = 85
@@ -64,21 +65,37 @@ function startFunction() {
       }
   })
   }
-  do {
-    up += 1
-    enemyArray[rand1].style.opacity = ".99";
-    // enemyArray[rand2].style.opacity = ".99";
-    // enemyArray[rand3].style.opacity = ".99";
-    // enemyArray[rand4].style.opacity = ".99";
-    enemyArray[rand1].style.marginTop = up + "%"
-    } while (up <= 60 && up)
-    setTimeout(function() {
-      enemyArray[rand1].style.opacity = ".0";
-      enemyArray[rand1].style.marginTop = "0"
-    }, 3000);
+  // enemy control
+ enemyArray[rand1].style.opacity = ".99";
+    Interval = setInterval (function() {
+        up_low += 0.1
+        enemyArray[rand1].style.marginTop = up_low + "%";
+        var styleLeftEnemy= getComputedStyle(enemyArray[rand1]);
+        var enemyLeft = parseInt(styleLeftEnemy.marginLeft);
+        var styleLeftJWST= getComputedStyle(document.getElementById("jwst"));
+        var jwstLeft = parseInt(styleLeftJWST.marginLeft);
+        console.log(jwstLeft)
+
+        console.log(enemyLeft)
+        if (up_low > 40) {
+          if (jwstLeft < enemyLeft) {
+            console.log('Damage!')
+            enemyArray[rand1].style.opacity = ".0";
+            enemyArray[rand1].style.marginTop = "0"
+            clearInterval(Interval)
+          } 
+  }
+    }, 10); 
+
+  // do {
+   
+
+  //   } while (up <= 60 && up)
+  //   setTimeout(function() {
+  //     enemyArray[rand1].style.opacity = ".0";
+  //     enemyArray[rand1].style.marginTop = "0"
+  //   }, 3000);
 
   // damage
-  if (up = 40) {
-    console.log('Damage!')
-  }
+ 
 }

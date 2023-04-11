@@ -125,23 +125,38 @@ nav {
 .enemy {
     position: absolute;
     width: 5%;
-    opacity: 0;
-    transition: margin-top 5s;
+    opacity: 1;
+    /* transition: margin-top 5s; */
 }
 #en1 {
-    margin-left: 0%
+    margin-left: 15%
 }
 #en2 {
-    margin-left: 5%
+    margin-left: 25%
 }
-@keyframes enemy_anim {
+#en3 {
+    margin-left: 35%
+}
+#en4 {
+    margin-left: 45%
+}
+#en5 {
+    margin-left: 55%
+}
+#en6 {
+    margin-left: 65%
+}
+#en7 {
+    margin-left: 75%
+}
+/* @keyframes enemy_anim {
     0% {
       transform: translateY(0);
     }
     100% {
       transform: translateY(110vh);
     }
-  }
+  } */
 }
 
 
