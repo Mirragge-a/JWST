@@ -106,7 +106,7 @@ nav {
     opacity: 1;
 }
 #jwst {
-    width: 10%;
+    width: 150px;
     height: auto;
     margin-top: 40%;
     margin-left: 45%;
@@ -148,6 +148,13 @@ nav {
 }
 #en7 {
     margin-left: 75%
+}
+#hp {
+    position: absolute;
+    padding-left: 80%;
+    font-size: 50px;
+    margin-top: 20px;
+    color: red;
 }
 /* @keyframes enemy_anim {
     0% {
