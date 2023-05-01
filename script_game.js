@@ -19,13 +19,8 @@ function enemySpawn() {
   var enemyCollection = document.getElementsByClassName("enemy");
   var enemyArray = Array.from(enemyCollection);
   var rand1 = Math.floor(Math.random() * enemyArray.length);
-  // var styleLeftEnemy1 = getComputedStyle(enemyArray[rand1]);
-
-  //var enemyLeft1 = Math.random() * 100;
-  //console.log("enemyLeft " + Math.floor(enemyLeft1) + "%");
 
   var enemyUp = 0;
-  //enemyArray[rand1].style.opacity = ".0";
   enemyProg.style.marginTop = "0";
   enemyProg.style.marginLeft = Math.floor(Math.random() * 100) + "%";
   enemyProg.style.opacity = ".99";
@@ -33,7 +28,6 @@ function enemySpawn() {
   Interval = setInterval(function () {
     enemyUp += 0.1;
     enemyProg.style.marginTop = enemyUp + "%";
-    //console.log(Math.floor(enemyUp));
 
     enemyCollison(enemyProg);
 
