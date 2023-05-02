@@ -1,13 +1,17 @@
 var hp = 3;
 let score = 0;
-var styleLeftJWST = getComputedStyle(document.getElementById("jwst"));
-var jwstLeft = parseInt(styleLeftJWST.marginLeft);
-
-var Interval = [];
+var enemyUp = 0;
+var speed = 0.12
 
 function enemySpawn() {
-
-  // 
+  document.getElementById("hp").innerHTML = hp + '❤';
+  document.getElementById("score").innerHTML = score + '🥇';
+  if (hp == 0) {
+    alert('Гра завершена. Ви програли!')
+    clearInterval(Interval);
+    enemyProg.remove();
+    return;
+  }
   let enemyProg = document.createElement("img");
   enemyProg.setAttribute("src", "assets/meteorite.png");
   
@@ -16,90 +20,91 @@ function enemySpawn() {
   let enemy_spawn = document.getElementById("enemy_spawn");
   enemy_spawn.append(enemyProg);
 
-  var enemyCollection = document.getElementsByClassName("enemy");
-  var enemyArray = Array.from(enemyCollection);
-  var rand1 = Math.floor(Math.random() * enemyArray.length);
 
-  var enemyUp = 0;
   enemyProg.style.marginTop = "0";
+
   enemyProg.style.marginLeft = Math.floor(Math.random() * 100) + "%";
   enemyProg.style.opacity = ".99";
-
+  
   Interval = setInterval(function () {
-    enemyUp += 0.1;
+    enemyLeft = parseInt(getComputedStyle(enemyProg).marginLeft)
+    enemyUp += speed;
     enemyProg.style.marginTop = enemyUp + "%";
+    var styleLeftJWST = getComputedStyle(document.getElementById("jwst"));
+    var jwstLeft = parseInt(styleLeftJWST.marginLeft);
 
-    enemyCollison(enemyProg);
+      var L = (jwstLeft - 30)
+      var N = (jwstLeft + 130)
+      const jwstHitbox = [...Array(N + 1).keys()].slice(L); 
 
-    if (enemyUp > 60) {
+
+    if (enemyUp >= 40) {
+      if (jwstHitbox.includes(enemyLeft) == true) {
+          console.log("Damage!");
+          enemyProg.remove();
+          enemyUp = 0;
+          speed += 0.03
+          clearInterval(Interval);
+          hp -= 1;
+          enemySpawn();
+    }
+
+    }
+    if (enemyUp >= 60) {
       enemyProg.remove();
       clearInterval(Interval);
+      enemyUp = 0;
+      score += 1;
       enemySpawn();
-      score +=1
-      document.getElementById("score").innerHTML = score;
-    }
+      speed += 0.03
+    } 
   }, 10);
 }
 
-function enemyCollison(enemyProg) {
-  //
-  //var N = jwstLeft + 150;
-  //const jwstHitbox = [...Array(N + 1).keys()].slice(jwstLeft);
+// function enemyCollison(enemyProg) {
+//   //
+//   //var N = jwstLeft + 150;
+//   //const jwstHitbox = [...Array(N + 1).keys()].slice(jwstLeft);
 
-  jwstRight = jwstLeft + 150;
+//   jwstRight = jwstLeft + 150;
   
-  let enemyLeft = parseInt(getComputedStyle(enemyProg).marginLeft)
-  let enemyUp = parseInt(getComputedStyle(enemyProg).marginTop)
+//   let enemyLeft = parseInt(getComputedStyle(enemyProg).marginLeft)
 
-  console.log(enemyLeft)
-    let enemyWidth = parseInt(getComputedStyle(enemyProg).width)
-  if (
-    enemyUp > 40 &&
-    jwstLeft < enemyLeft + enemyWidth &&
-    enemyLeft < jwstLeft + 150
-  ) {
-    console.log("enemyLeft " + enemyLeft);
-    console.log("jwstLeft! " + jwstLeft);
 
-    console.log("Damage!");
-    enemyProg.remove();
-    clearInterval(Interval);
-    enemySpawn();
-         hp -= 1;
-         document.getElementById("hp").innerHTML = hp;
-    //     clearInterval(Interval);
-    //     enemySpawn();
-      } 
+
+//   console.log(enemyLeft)
+//     let enemyWidth = parseInt(getComputedStyle(enemyProg).width)
+//   if (
+//     enemyUp > 40 )
+//     if (
+//     jwstLeft < enemyLeft + enemyWidth &&
+//     enemyLeft < jwstLeft + 150
+//   ) {
+//     console.log("enemyLeft " + enemyLeft);
+//     console.log("jwstLeft! " + jwstLeft);
+
+//     console.log("Damage!");
+//     enemyProg.remove();
+//     clearInterval(Interval);
+//     enemySpawn();
+//          hp -= 1;
+//          document.getElementById("hp").innerHTML = hp;
+//     //     clearInterval(Interval);
+//     //     enemySpawn();
+//       } 
   
-}
+// }
 
 // enemySpawn();
 // jwstControl
 
 function startFunction() {
-  // alert('Гра розпочата!')
-
-  // player control
   enemySpawn();
   jwstControl();
-
-  // setInterval(function() {
-  // enemySpawn()
-  // }, 3000);
-
-  // do {
-
-  // } while (up <= 60 && up)
-  // setTimeout(function() {
-  //     enemyArray[rand1].style.opacity = ".0";
-  //     enemyArray[rand1].style.marginTop = "0"
-  // }, 3000);
 }
 
 function jwstControl() {
-  var hp = 3;
   var left = 45;
-  document.getElementById("hp").innerHTML = hp;
   if (left < 90) {
     document.addEventListener("keydown", function (event) {
       if (event.code == "KeyA") {
