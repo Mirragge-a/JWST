@@ -125,7 +125,6 @@ nav {
 
 .enemy {
     position: absolute;
-    width: 5%;
     opacity: 0;
     /* transition: margin-top 5s; */
 }
@@ -198,7 +197,7 @@ nav {
 
 
 @media all and (max-width: 720px) {
-    .mobile_p {
+    /* .mobile_p {
         display: block;
         font-size: 30px;
         text-align: center;
@@ -213,5 +212,5 @@ nav {
     .game {
         display: none;
 
-    }
+    } */
 }

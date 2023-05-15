@@ -1,3 +1,10 @@
+let enemyImg = [
+  'assets/meteorite.png',
+  'assets/meteorite_red.png',
+  'assets/meteorite_new.png'
+]
+
+
 var hp = 3;
 let score = 0;
 var enemyUp = 0;
@@ -13,7 +20,8 @@ function enemySpawn() {
     return;
   }
   let enemyProg = document.createElement("img");
-  enemyProg.setAttribute("src", "assets/meteorite.png");
+  var rand = Math.floor(Math.random()*enemyImg.length);
+  enemyProg.setAttribute("src", enemyImg[rand]);
   
   enemyProg.setAttribute("class", "enemy");
   document.getElementById("enemy_spawn");
@@ -22,9 +30,10 @@ function enemySpawn() {
 
 
   enemyProg.style.marginTop = "0";
-
+  enemyProg.style.width = Math.floor(Math.random() * 10) + "%";
   enemyProg.style.marginLeft = Math.floor(Math.random() * 100) + "%";
   enemyProg.style.opacity = ".99";
+  
   
   Interval = setInterval(function () {
     enemyLeft = parseInt(getComputedStyle(enemyProg).marginLeft)
@@ -38,7 +47,7 @@ function enemySpawn() {
       const jwstHitbox = [...Array(N + 1).keys()].slice(L); 
 
 
-    if (enemyUp >= 40) {
+    if (enemyUp >= 40 && enemyUp <= 50) {
       if (jwstHitbox.includes(enemyLeft) == true) {
           console.log("Damage!");
           enemyProg.remove();
@@ -124,8 +133,27 @@ function jwstControl() {
         
       }
     });
-  }
 
+    var top = 45
+    if (top < 90) {
+    document.addEventListener("keydown", function (event) {
+      if (event.code == "KeyW") {
+        top -= 5;
+        if (top > 4) {
+          document.getElementById("jwst").style.marginTop = top + "%";
+        } else {
+          left = 5;
+        }
+      } else if (event.code == "KeyS") {
+        top += 5;
+        if (top < 76) {
+          document.getElementById("jwst").style.marginTop = top + "%";
+        } else {
+        top = 75;
+        }
+        
+      }
+    });
+  }
   // enemy control
- 
-}
+}}
