@@ -4,11 +4,71 @@ let enemyImg = [
   'assets/meteorite_new.png'
 ]
 
+let bonusImg = [
+  'assets/planet1.png',
+  'assets/planet2.png',
+  'assets/planet3.png',
+  'assets/planet4.png'
+]
+
 
 var hp = 3;
-let score = 0;
+var score = 0;
 var enemyUp = 0;
+var bonusUp = 0;
 var speed = 0.12
+function bonSpawn() {
+  let bonusProg = document.createElement("img");
+  var rand = Math.floor(Math.random()*bonusImg.length);
+  bonusProg.setAttribute("src", bonusImg[rand]);
+  
+  bonusProg.setAttribute("class", "bonus");
+  document.getElementById("bonus_spawn");
+  let bonus_spawn = document.getElementById("bonus_spawn");
+  bonus_spawn.append(bonusProg);
+
+
+  bonusProg.style.marginTop = "0";
+  bonusProg.style.width = Math.floor(Math.random() * 10) + "%";
+  bonusProg.style.marginLeft = Math.floor(Math.random() * 100) + "%";
+  bonusProg.style.opacity = ".99";
+  
+  
+  Interval1 = setInterval(function () {
+    var bonusSpeed = Math.random()* (0.2 - 0.005) + 0.005;
+    bonusLeft = parseInt(getComputedStyle(bonusProg).marginLeft)
+    bonusUp += bonusSpeed;
+    bonusProg.style.marginTop = bonusUp + "%";
+    var styleLeftJWST = getComputedStyle(document.getElementById("jwst"));
+    var jwstLeft = parseInt(styleLeftJWST.marginLeft);
+
+      var L = (jwstLeft - 30)
+      var N = (jwstLeft + 130)
+      const jwstHitbox = [...Array(N + 1).keys()].slice(L); 
+
+
+    if (bonusUp >= 40 && bonusUp <= 50 && jwstHitbox.includes(bonusLeft) == true) {
+      // if (jwstHitbox.includes(bonusLeft) == true) {
+          bonusProg.remove();
+          bonusUp = 0;
+          speed += 0.03
+          clearInterval(Interval1);
+          score += 1;
+          bonSpawn();
+    }
+
+    // }
+    if (bonusUp >= 60) {
+      console.log(bonusUp)
+      bonusProg.remove();
+      clearInterval(Interval1);
+      bonusUp = 0;
+      bonSpawn();
+    } 
+  }, 5);
+}
+
+
 
 function enemySpawn() {
   document.getElementById("hp").innerHTML = hp + '❤';
@@ -52,7 +112,7 @@ function enemySpawn() {
           console.log("Damage!");
           enemyProg.remove();
           enemyUp = 0;
-          speed += 0.03
+          speed += 0.01
           clearInterval(Interval);
           hp -= 1;
           enemySpawn();
@@ -63,52 +123,17 @@ function enemySpawn() {
       enemyProg.remove();
       clearInterval(Interval);
       enemyUp = 0;
-      score += 1;
       enemySpawn();
-      speed += 0.03
+      speed += 0.005
     } 
   }, 10);
 }
 
-// function enemyCollison(enemyProg) {
-//   //
-//   //var N = jwstLeft + 150;
-//   //const jwstHitbox = [...Array(N + 1).keys()].slice(jwstLeft);
 
-//   jwstRight = jwstLeft + 150;
-  
-//   let enemyLeft = parseInt(getComputedStyle(enemyProg).marginLeft)
-
-
-
-//   console.log(enemyLeft)
-//     let enemyWidth = parseInt(getComputedStyle(enemyProg).width)
-//   if (
-//     enemyUp > 40 )
-//     if (
-//     jwstLeft < enemyLeft + enemyWidth &&
-//     enemyLeft < jwstLeft + 150
-//   ) {
-//     console.log("enemyLeft " + enemyLeft);
-//     console.log("jwstLeft! " + jwstLeft);
-
-//     console.log("Damage!");
-//     enemyProg.remove();
-//     clearInterval(Interval);
-//     enemySpawn();
-//          hp -= 1;
-//          document.getElementById("hp").innerHTML = hp;
-//     //     clearInterval(Interval);
-//     //     enemySpawn();
-//       } 
-  
-// }
-
-// enemySpawn();
-// jwstControl
 
 function startFunction() {
   enemySpawn();
+  bonSpawn()
   jwstControl();
 }
 
@@ -134,26 +159,4 @@ function jwstControl() {
       }
     });
 
-    var top = 45
-    if (top < 90) {
-    document.addEventListener("keydown", function (event) {
-      if (event.code == "KeyW") {
-        top -= 5;
-        if (top > 4) {
-          document.getElementById("jwst").style.marginTop = top + "%";
-        } else {
-          left = 5;
-        }
-      } else if (event.code == "KeyS") {
-        top += 5;
-        if (top < 76) {
-          document.getElementById("jwst").style.marginTop = top + "%";
-        } else {
-        top = 75;
-        }
-        
-      }
-    });
-  }
-  // enemy control
 }}
