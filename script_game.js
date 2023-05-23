@@ -18,7 +18,7 @@ var enemyUp = 0;
 var bonusUp = 0;
 var speed = 0.12
 function bonSpawn() {
-  let bonusProg = document.createElement("img");
+  var bonusProg = document.createElement("img");
   var rand = Math.floor(Math.random()*bonusImg.length);
   bonusProg.setAttribute("src", bonusImg[rand]);
   
@@ -33,7 +33,6 @@ function bonSpawn() {
   bonusProg.style.marginLeft = Math.floor(Math.random() * 100) + "%";
   bonusProg.style.opacity = ".99";
   
-  
   Interval1 = setInterval(function () {
     var bonusSpeed = Math.random()* (0.2 - 0.005) + 0.005;
     bonusLeft = parseInt(getComputedStyle(bonusProg).marginLeft)
@@ -46,7 +45,7 @@ function bonSpawn() {
       var N = (jwstLeft + 130)
       const jwstHitbox = [...Array(N + 1).keys()].slice(L); 
 
-
+      
     if (bonusUp >= 40 && bonusUp <= 50 && jwstHitbox.includes(bonusLeft) == true) {
       // if (jwstHitbox.includes(bonusLeft) == true) {
           bonusProg.remove();
@@ -64,6 +63,7 @@ function bonSpawn() {
       clearInterval(Interval1);
       bonusUp = 0;
       bonSpawn();
+
     } 
   }, 5);
 }
@@ -74,10 +74,17 @@ function enemySpawn() {
   document.getElementById("hp").innerHTML = hp + '❤';
   document.getElementById("score").innerHTML = score + '🥇';
   if (hp == 0) {
-    alert('Гра завершена. Ви програли!')
+    
+    hp += 3;
+    score = 0;
+    speed = 0.12
+    console.log('hp:', hp)
+    document.getElementById("menu").style.opacity = "1"
     clearInterval(Interval);
+    clearInterval(Interval1);
+    bonusProg.remove(); 
     enemyProg.remove();
-    return;
+    // var bonusUp = 0;
   }
   let enemyProg = document.createElement("img");
   var rand = Math.floor(Math.random()*enemyImg.length);
@@ -132,6 +139,7 @@ function enemySpawn() {
 
 
 function startFunction() {
+  document.getElementById("menu").style.opacity = "0"
   enemySpawn();
   bonSpawn()
   jwstControl();
@@ -160,3 +168,14 @@ function jwstControl() {
     });
 
 }}
+
+
+function PauseFunction() {
+  var opacity = parseInt(getComputedStyle(document.getElementById("menu")).opacity)
+  if (opacity != "0") {
+    document.getElementById("menu").style.opacity = "0"
+  } else {
+    document.getElementById("menu").style.opacity = "1"
+  }
+  
+}
