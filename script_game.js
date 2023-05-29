@@ -17,6 +17,7 @@ var score = 0;
 var enemyUp = 0;
 var bonusUp = 0;
 var speed = 0.12
+let input = document.querySelector('input');
 function bonSpawn() {
   var bonusProg = document.createElement("img");
   var rand = Math.floor(Math.random()*bonusImg.length);
@@ -72,6 +73,10 @@ function bonSpawn() {
 
 function enemySpawn() {
   document.getElementById("hp").innerHTML = hp + '❤';
+  if(input.value == "") {
+    input.value = 'Player'
+  }
+  document.getElementById("nickname").innerHTML = input.value;
   document.getElementById("score").innerHTML = score + '🥇';
   if (hp == 0) {
     
@@ -139,6 +144,8 @@ function enemySpawn() {
 
 
 function startFunction() {
+  document.getElementById("but_back").style.cursor = "default";
+  document.getElementById("but_start").style.cursor = "default";
   document.getElementById("menu").style.opacity = "0"
   enemySpawn();
   bonSpawn()
@@ -179,3 +186,13 @@ function PauseFunction() {
   }
   
 }
+
+document.addEventListener("keydown", function (event) {
+  if (event.code == "Enter") {
+    if(hp == '3' || score == '0'){
+      startFunction()
+    } else {
+      console.log('fff')
+    }
+  } 
+});
