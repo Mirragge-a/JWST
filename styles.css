@@ -299,17 +299,18 @@ body {
         margin: 0;
         padding: 0;
     }
-    /* .img_uk {
-        width: 50px;
-        padding-left: 150px;
-        padding-top: 15px;
+    .report {
+        margin-top: 45px;
+    }
+    .report a {
+        text-decoration: none;
+        font-family: sans-serif;
+        font-size: 150%;
+        color: lavender;
+        padding-top: 150%;
     }
 
-    .img_ua {
-        width: 50px;
-        padding-left: 20px;
-        padding-top: 15px;
-    } */
+
     .lang {
         display: flex;
         flex-direction: row;
