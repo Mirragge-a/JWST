@@ -167,7 +167,11 @@ body {
         gap: 15px;
         padding: 20px;
     }
-
+    .jupiter p {
+        padding-right: 0px;
+        padding-left: 25px
+    }
+    
     #bvid {
         border: none;
         background-color: rgba(58, 34, 66, 0);
