@@ -167,7 +167,11 @@ body {
         gap: 15px;
         padding: 20px;
     }
-
+    .jupiter p {
+        padding-right: 0px;
+        padding-left: 25px
+    }
+    
     #bvid {
         border: none;
         background-color: rgba(58, 34, 66, 0);
@@ -299,17 +303,18 @@ body {
         margin: 0;
         padding: 0;
     }
-    /* .img_uk {
-        width: 50px;
-        padding-left: 150px;
-        padding-top: 15px;
+    .report {
+        margin-top: 45px;
+    }
+    .report a {
+        text-decoration: none;
+        font-family: sans-serif;
+        font-size: 150%;
+        color: lavender;
+        padding-top: 150%;
     }
 
-    .img_ua {
-        width: 50px;
-        padding-left: 20px;
-        padding-top: 15px;
-    } */
+
     .lang {
         display: flex;
         flex-direction: row;
