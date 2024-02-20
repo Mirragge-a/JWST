@@ -184,7 +184,6 @@ function PauseFunction() {
   } else {
     document.getElementById("menu").style.opacity = "1"
   }
-  
 }
 
 document.addEventListener("keydown", function (event) {
@@ -194,5 +193,6 @@ document.addEventListener("keydown", function (event) {
     } else {
       console.log('fff')
     }
-  } 
+  }
+
 });
